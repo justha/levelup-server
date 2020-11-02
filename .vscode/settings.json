@@ -15,5 +15,19 @@
         "titleBar.inactiveBackground": "#1857a499",
         "titleBar.inactiveForeground": "#e7e7e799"
     },
-    "peacock.color": "#1857a4"
+    "peacock.color": "#1857a4",
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "driver": "SQLite",
+            "database": "levelup.db",
+            "name": "levelup"
+        },
+        {
+            "previewLimit": 50,
+            "driver": "SQLite",
+            "name": "levelup",
+            "database": "levelup.db"
+        }
+    ]
 }

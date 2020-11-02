@@ -27,7 +27,7 @@ class Migration(migrations.Migration):
             name='GameType',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('desc', models.CharField(max_length=25)),
+                ('label', models.CharField(max_length=25)),
             ],
         ),
         migrations.CreateModel(

@@ -1,0 +1,13 @@
+[
+    {
+        "model": "levelupapi.game",
+        "pk": 1,
+        "fields": {
+            "gamer": 1,
+            "gametype": 1,
+            "name": "Connect Four",
+            "skill_level": 3,
+            "number_of_players": 2
+        }
+    }
+]
