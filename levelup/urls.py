@@ -9,6 +9,7 @@ router = routers.DefaultRouter(trailing_slash=False)
 router.register(r'gametypes', GameTypes, 'gametype')
 router.register(r'games', Games, 'game')
 router.register(r'events', Events, 'event')
+# router.register(r'profile', Profile, 'profile')
 
 urlpatterns = [
     path('', include(router.urls)),

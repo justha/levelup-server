@@ -20,8 +20,8 @@
         {
             "previewLimit": 50,
             "driver": "SQLite",
-            "database": "levelup.db",
-            "name": "levelup"
+            "database": "db.sqlite3",
+            "name": "LevelUp DB"
         }
     ]
 }

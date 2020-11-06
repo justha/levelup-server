@@ -48,7 +48,7 @@ class Events(ViewSet):
             event = Event.objects.get(pk=pk)
             serializer = EventSerializer(event, context={'request': request})
             return Response(serializer.data)
-        except Exception:
+        except Exception as ex:
             return HttpResponseServerError(ex)
 
     def update(self, request, pk=None):
@@ -122,6 +122,12 @@ class EventGamerSerializer(serializers.ModelSerializer):
         model = Gamer
         fields = ['user']
 
+class GameSerializer(serializers.HyperlinkedModelSerializer):
+    """JSON serializer for games"""
+    class Meta:
+        model = Game
+        fields = ('id', 'title', 'maker', 'number_of_players', 'skill_level')
+
 class EventSerializer(serializers.HyperlinkedModelSerializer):
     """JSON serializer for events"""
     organizer = EventGamerSerializer(many=False)
@@ -133,11 +139,4 @@ class EventSerializer(serializers.HyperlinkedModelSerializer):
             view_name='event',
             lookup_field='id'
         )
-        fields = ('id', 'url', 'game', 'organizer',
-                  'description', 'date', 'time')
-
-class GameSerializer(serializers.HyperlinkedModelSerializer):
-    """JSON serializer for games"""
-    class Meta:
-        model = Game
-        fields = ('id', 'title', 'maker', 'number_of_players', 'skill_level')
+        fields = ('id', 'organizer','description', 'game', 'date', 'time')
